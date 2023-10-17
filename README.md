@@ -21,6 +21,7 @@ The repository contains the following structure:
     ├── FitModels.py        # Script to gen. data for sim studies
     ├── Plot_Results.R      # Plot all figures
     ├── utils.R             # R utility functions
+├── LICENSE                 # MIT License
 ├── Makefile                # Run all sim. experiments and plot results
 ├── Readme.md               # This file
 
