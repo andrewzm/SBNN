@@ -4,9 +4,9 @@ Reproducible Code for "Spatial Bayesian Neural Networks"
 
 Spatial Bayesian neural networks (SBNNs) are Bayesian neural networks that are adapted for modelling spatial processes. They incorporate a spatial embedding layer and, possibly, spatially varying weights and biases. This page provides reproducible code for the paper "Spatial Bayesian Neural Networks". Specifically, this code will calibrate BNNs and SBNNs to three "target" processes: a stationary Gaussian process, a non-stationary Gaussian process, and a stationary lognormal process. Results, saved in the `figures/` directory, show that the SBNN variants can reproduce properties of these target processes better than classical BNNs of similar complexity.
 
-<img align="right" src="https://github.com/andrewzm/bnn-spatial/assets/150125/2321d1a6-6ddd-4439-b620-6fb0681cdaf7" alt="drawing" width="100%"/>
+<img align="right" src="https://raw.githubusercontent.com/andrewzm/SBNN/main/src/figures/Section4_3_SBNN-IP_marginal_histograms.png" alt="drawing" width="100%"/>
 
-<img align="right" src="https://github.com/andrewzm/bnn-spatial/assets/150125/0729ff81-4b2e-43cc-898d-478bdf39d6be" alt="drawing" width="100%"/>
+<img align="right" src="https://raw.githubusercontent.com/andrewzm/SBNN/main/src/figures/Section4_3_SBNN-IP_joint_histograms.png" alt="drawing" width="100%"/>
 
 
 ## Repo Structure
