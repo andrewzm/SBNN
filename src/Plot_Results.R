@@ -84,7 +84,7 @@ p <- ggplot(rbf_df) +
        theme_bw() + 
        theme(text = element_text(size = 7),
              legend.position = "none") +
-       ylab(TeX(r"( ${\rho}(s_2, \tau = 1)$)")) +
+       ylab(TeX(r"( ${\rho}((0, s_2)'; \tau = 1)$)")) +
        xlab(TeX(r"($s_2$)"))
 
 save_image(path = paste0(FIG_DIR, "Section4_Basis_Functions.png"),
