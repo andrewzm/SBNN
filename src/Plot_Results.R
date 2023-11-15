@@ -696,7 +696,7 @@ tabledf2 <- tabledf %>%
                                     ((as.numeric(SQRT_EMBEDDING_SIZE)^2 + 1) * 40) + 3280 + 41),
                   num_hyperparams = if_else(PRIOR_PER == 'parameter',
                                             num_params*2,
-                                              4*2),
+                                              4*2*2), # 4 mappings * 2 par types (weights, biases) * 2 hypers (mean, variance)
                   num_hyperparams = if_else(SPATIALLY_VARYING_PARAMETERS,
                                               num_hyperparams * as.numeric(SQRT_EMBEDDING_SIZE)^2,
                                               num_hyperparams))
