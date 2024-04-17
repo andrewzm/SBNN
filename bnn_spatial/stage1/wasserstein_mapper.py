@@ -144,7 +144,7 @@ class WassersteinDistance():
 
         # Draw functions from GP, into tensor of size (n_data, n_samples)
         if self.raw_data:
-            gp_samples_bag = self.gp.sample_functions(n_samples, lognormal = self.lognormal).detach().float().to(self.device)
+            gp_samples_bag = self.gp.sample_functions(n_samples).detach().float().to(self.device)
         else:
             gp_samples_bag = self.gp.sample_functions(X.double(), n_samples, lognormal = self.lognormal).detach().float().to(self.device)
 
@@ -357,7 +357,7 @@ class MapperWasserstein(object):
             if self.raw_data:
                 if self.n_data != 64**2:
                     raise Exception('Only 64-by-64 SST samples are considered; need n_data = 64^2')
-                gp_samples = self.gp.sample_functions(n_samples, lognormal = self.lognormal).detach().float().to(self.device)
+                gp_samples = self.gp.sample_functions(n_samples).detach().float().to(self.device)
             else:
                 gp_samples = self.gp.sample_functions(X.double(), n_samples, lognormal = self.lognormal).detach().float().to(self.device)
 

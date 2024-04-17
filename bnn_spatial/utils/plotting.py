@@ -168,9 +168,15 @@ def plot_lipschitz(inner_steps, outer_steps, samples, type='penalty'):
     # Plot the gradient norms / losses
     plt.figure()
     ax = plt.gca()
-    col = plt.get_cmap(name='Spectral_r')(np.linspace(0, 1, math.floor((outer_steps-1)/2)))  # create array of colourmap values
-    for ss in range(math.floor((outer_steps-1)/2)):  # skip first half
-        plt.plot(inner_range, samples[:, math.floor((outer_steps-1)/2) + ss], lw=0.2, color=col[ss], alpha=alpha)  # colour by loop
+    col = plt.get_cmap(name='Spectral_r')(np.linspace(0, 1, 100))  # create array of colourmap values
+    indices_to_plot = np.round(
+                        np.linspace(math.floor((outer_steps-1)/2), 
+                                                outer_steps-2, num = 100)
+                     ).astype(int)
+    for ss in range(100):
+        plt.plot(inner_range, 
+                 samples[:, indices_to_plot[ss]], 
+                 lw=0.2, color=col[ss], alpha=alpha)  # colour by loop
     plt.ylabel(ylab)
     plt.xlabel('Iteration (Inner Loop)')
 
@@ -1293,3 +1299,18 @@ def plot_sst(t, sst_data, lat, lon, show_grid=True):
     cax = divider.append_axes("right", size="2%", pad=0.15)
     cbar = plt.colorbar(cax=cax)
     cbar.set_label('Degrees (Celsius)', rotation=270, labelpad=24)
+
+def plot_wasserstein_iterations(wdist_vals, indices, FIG_DIR):
+    plt.figure()
+    plt.plot(indices, wdist_vals[indices], "-ko", ms=4)
+    plt.ylabel(r'$W_1(p_{gp}, p_{nn})$')
+    plt.xlabel('Iteration (Outer Loop)')
+    plt.savefig(FIG_DIR + '/Wasserstein_steps.png', bbox_inches='tight')
+    plt.close()
+
+    plt.figure()
+    plt.plot(indices, wdist_vals[indices], "-ko", ms=4)
+    plt.yscale('log')
+    plt.ylabel(r'$W_1(p_{gp}, p_{nn})$')
+    plt.xlabel('Iteration (Outer Loop)')
+    plt.savefig(FIG_DIR + '/Wasserstein_steps_log.png', bbox_inches='tight')

@@ -164,6 +164,12 @@ find_max_level <- function(x1, x2, y1, y2, n = 100) {
   max(c(kde1$z, kde2$z))
 }
 
+find_min_max_level <- function(x1, x2, y1, y2, n = 100) {
+  kde1 <- kde2d(x1, x2, n = 100)
+  kde2 <- kde2d(y1, y2, n = 100)
+  min(c(max(kde1$z), max(kde2$z)))
+}
+
 ## Save image
 save_image <- function(path, p, width_in, height_in, res = 300, device = "png") {
 
@@ -179,3 +185,7 @@ save_image <- function(path, p, width_in, height_in, res = 300, device = "png") 
       stop("device must be png or ggsave_png")
     }
 }
+
+format_two_decimals <- function(x) {
+      sprintf("%.2f", as.numeric(x))
+    }
