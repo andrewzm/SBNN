@@ -19,9 +19,9 @@ The repository contains the following structure:
 ├── bnn_spatial/                     # Python package
 ├── src/                             # Source scripts folder
     ├── configs/                     # Configuration files
-	├── data/                        # Data folder for max-stable sims
+    ├── data/                        # Data folder for max-stable sims
     ├── figures/                     # Output figures
-	├── intermediates/               # Intermediary outputs	
+    ├── intermediates/               # Intermediary outputs	
     ├── 1_BNN_degeneracy.py          # Script to gen. data for Fig. 1
     ├── 2a_Gen_max_stable_data.R     # Script to gen. data for Sect 5.2	
     ├── 2b_Preprocess_max_stable.py  # Script to process data for Sect 5.2	
